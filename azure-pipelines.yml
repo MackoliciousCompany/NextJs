@@ -35,13 +35,20 @@ steps:
     extraProperties: |
       sonar.testExecutionReportPaths=test-report.xml
 
-- script: |
-    npm run build
-  displayName: 'npm build'
+# - script: |
+#     npm run build
+#   displayName: 'npm build'
 
 - script: |
     npm run test
   displayName: 'npm run test'
+
+# - task: PublishTestResults@2
+#   displayName: Publish test results
+#   condition: succeededOrFailed()
+#   inputs:
+#     testResultsFormat: jest-sonar-reporter
+#     testResultsFiles: "test-report.xml"
 
 - task: SonarCloudAnalyze@1
 
