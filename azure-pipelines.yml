@@ -34,7 +34,6 @@ steps:
     cliSources: '.'
     extraProperties: |
       sonar.testExecutionReportPaths=test-report.xml
-      sonar.sources=.
       sonar.javascript.lcov.reportPaths=coverage/lcov.info
 
 # - script: |
