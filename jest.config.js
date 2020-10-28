@@ -25,8 +25,8 @@ module.exports = {
 
   /*
    * Indicates whether the coverage information should be collected while executing the test
-   * collectCoverage: false,
    */
+   collectCoverage: true,
 
   /*
    * An array of glob patterns indicating a set of files for which coverage information should be collected
@@ -38,10 +38,8 @@ module.exports = {
 
   /*
    * An array of regexp pattern strings used to skip coverage collection
-   * coveragePathIgnorePatterns: [
-   *   "\\\\node_modules\\\\"
-   * ],
    */
+   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
 
   /*
    * Indicates which provider should be used to instrument code for coverage
@@ -122,14 +120,20 @@ module.exports = {
    * moduleNameMapper: {},
    */
 
-  // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  // modulePathIgnorePatterns: [],
+  /*
+   * An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
+   * modulePathIgnorePatterns: [],
+   */
 
-  // Activates notifications for test results
-  // notify: false,
+  /*
+   * Activates notifications for test results
+   * notify: false,
+   */
 
-  // An enum that specifies notification mode. Requires { notify: true }
-  // notifyMode: "failure-change",
+  /*
+   * An enum that specifies notification mode. Requires { notify: true }
+   * notifyMode: "failure-change",
+   */
 
   /*
    * A preset that is used as a base for Jest's configuration
@@ -147,7 +151,6 @@ module.exports = {
   /*
    * reporters: [
    *     'default', 
-   *     'jest-sonar-reporter'
    *   ],
    */
 

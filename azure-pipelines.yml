@@ -34,6 +34,7 @@ steps:
     cliSources: '.'
     extraProperties: |
       sonar.testExecutionReportPaths=test-report.xml
+      sonar.javascript.lcov.reportPaths=coverage
 
 # - script: |
 #     npm run build
