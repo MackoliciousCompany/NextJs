@@ -131,14 +131,25 @@ module.exports = {
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
 
-  // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  /*
+   * A preset that is used as a base for Jest's configuration
+   * preset: undefined,
+   */
 
-  // Run tests from one or more projects
-  // projects: undefined,
+  /*
+   * Run tests from one or more projects
+   * projects: undefined,
+   */
 
-  // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
+  /*
+   * Use this configuration option to add custom reporters to Jest
+   */
+  /*
+   * reporters: [
+   *     'default', 
+   *     'jest-sonar-reporter'
+   *   ],
+   */
 
   /*
    * Automatically reset mock state between every test
