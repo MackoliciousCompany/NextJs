@@ -32,14 +32,16 @@ steps:
     cliProjectKey: 'Mackolicious_NextJs-Public'
     cliProjectName: 'NextJs Public'
     cliSources: '.'
+    extraProperties: |
+      sonar.testExecutionReportPaths=test-report.xml
 
 - script: |
     npm run build
   displayName: 'npm build'
 
 # - script: |
-#     npm text
-#   displayName: 'npm test'
+#     npm run test
+#   displayName: 'npm run test'
 
 - task: SonarCloudAnalyze@1
 
