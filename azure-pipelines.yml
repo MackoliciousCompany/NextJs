@@ -44,12 +44,12 @@ steps:
     npm run test
   displayName: 'npm run test'
 
-# - task: PublishTestResults@2
-#   displayName: Publish test results
-#   condition: succeededOrFailed()
-#   inputs:
-#     testResultsFormat: jest-sonar-reporter
-#     testResultsFiles: "test-report.xml"
+- task: PublishTestResults@2
+  displayName: Publish test results
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: jest-sonar-reporter
+    testResultsFiles: "test-report.xml"
 
 - task: SonarCloudAnalyze@1
 
