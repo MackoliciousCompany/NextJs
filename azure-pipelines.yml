@@ -59,6 +59,26 @@ steps:
     pollingTimeoutSec: '300'
   continueOnError: false
 
+- task: PowerShell@2
+  displayName: SonarCloud Result
+  inputs:
+    targetType: 'inline'
+    script: |
+      $token = [System.Text.Encoding]::UTF8.GetBytes("bb668141a8c8410b345d52a249d1bff75432617c:")
+      $base64 = [System.Convert]::ToBase64String($token)
+       
+      $basicAuth = [string]::Format("Basic {0}", $base64)
+      $headers = @{ Authorization = $basicAuth }
+       
+      $result = Invoke-RestMethod -Method Get -Uri https://sonarcloud.io/dashboard?id=Mackolicious_NextJs-Public -Headers $headers
+      $result | ConvertTo-Json | Write-Host
+       
+      if ($result.projectStatus.status -eq "OK") {
+      Write-Host "Quality Gate Succeeded"
+      }else{
+      throw "Quality gate failed"
+      }
+
 - task: CopyFiles@2
   displayName: "Copy Output Directory"
   inputs:
